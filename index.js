@@ -37,16 +37,16 @@ async function run() {
     const userCollection = client.db("tong_adda").collection("user");
 
     // auth jwt 
-    app.post('/jwt', async(req, res)=> {
-      const user = req.body;
-      const token = jwt.sign(user, process.env.TOKEN, {expiresIn: '7h'});
-      res
-      .cookie("token", token, {
-        httpOnly: true,
-        secure: false
-      })
-      .send({message: true });
-    })
+    // app.post('/jwt', async(req, res)=> {
+    //   const user = req.body;
+    //   const token = jwt.sign(user, process.env.TOKEN, {expiresIn: '7h'});
+    //   res
+    //   .cookie("token", token, {
+    //     httpOnly: true,
+    //     secure: false
+    //   })
+    //   .send({message: true });
+    // })
 
     //    get services
     app.get("/services", async (req, res) => {
